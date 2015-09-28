@@ -23,6 +23,7 @@ else:
 URL_BASE = 'http://marketdata.websol.barchart.com'
 TIMESTAMP_FMT = '%Y-%m-%dT%H:%M:%S%z'
 DATE_FMT = '%Y-%m-%d'
+TIMESTAMP_NOSEP_FMT = '%Y%m%d%H%M%S'
 
 try:
     API_KEY = os.environ['BARCHART_API_KEY']
@@ -167,6 +168,11 @@ def getHistory(symbols, startDate, typ='daily', session=None):
     """
     Returns history for ONE (or SEVERAL) symbol(s)
     """
+    try:
+        startDate = startDate.dt.strftime(TIMESTAMP_NOSEP_FMT)
+    except:
+        pass
+    
     if isinstance(symbols, six.string_types):
         result = _getHistory_one_symbol(symbols, startDate, typ, session)
         return result # returns a Pandas Panel
