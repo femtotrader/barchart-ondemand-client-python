@@ -1,6 +1,5 @@
 ## Python client for Barchart OnDemand
 
-[See how to use the client in your project here](https://github.com/femtotrader/barchart-ondemand-client-python/sample)
 
 Get free API key at:
 
@@ -13,6 +12,4 @@ Get free API key at:
 
 ### Example Code
 
-```python
-print();
-```
+[See how to use the client in your project here](https://github.com/femtotrader/barchart-ondemand-client-python/samples/main.py)
