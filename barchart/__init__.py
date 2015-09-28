@@ -148,12 +148,10 @@ def _getHistory_one_symbol(symbol, startDate, typ='daily', session=None):
     if _PANDAS_INSTALLED and CONFIG.output_pandas:
         timestamp_cols = ['timestamp', 'tradingDay']
         df = pd.DataFrame(response['results'])
-        print(df)
         for col in timestamp_cols:
             df[col] = pd.to_datetime(df[col])
         #df['tradingDay'] = df['tradingDay'].map(lambda s: datetime.datetime.strptime(s, DATE_FMT).date())
         df = df.set_index('timestamp')
-        print(df)
         return df # returns a Pandas DataFrame
     else:
         d = response['results']
@@ -172,7 +170,7 @@ def getHistory(symbols, startDate, typ='daily', session=None):
         startDate = startDate.dt.strftime(TIMESTAMP_NOSEP_FMT)
     except:
         pass
-    
+
     if isinstance(symbols, six.string_types):
         result = _getHistory_one_symbol(symbols, startDate, typ, session)
         return result # returns a Pandas Panel
