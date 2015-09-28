@@ -94,14 +94,6 @@ def getQuote(symbols, session=None):
     Returns quote for one (or several) symbol(s)
     getQuote sample query: http://marketdata.websol.barchart.com/getQuote.json?key=YOURAPIKEY&symbols=ZC*1,IBM,GOOGL,^EURUSD
     """
-
-    def parse_result(result):
-        for col in ['serverTimestamp', 'tradeTimestamp']:
-            s = result[col]
-            result[col] = datetime.datetime.strptime(
-                s[0:19] + s[19:].replace(':', ''), TIMESTAMP_FMT)
-        return result
-
     endpoint = '/getQuote.json'
     url = URL_BASE + endpoint
     params = {

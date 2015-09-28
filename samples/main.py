@@ -43,6 +43,7 @@ quotes = getQuote(symbols, session=session)
 print(quotes) # quotes is a Pandas DataFrame
 CONFIG.output_pandas = True
 
+
 # getHistory with ONE symbol
 # ==========================
 symbol = 'IBM'
@@ -53,6 +54,7 @@ print(history.dtypes)
 #print(type(history['timestamp'][0])) # should be a pandas.tslib.Timestamp
 #print(type(history.index[0])) # should be a pandas.tslib.Timestamp
 #print(type(history['tradingDay'][0])) # should be a pandas.tslib.Timestamp
+
 
 # getHistory with SEVERAL symbols
 # ===============================
