@@ -13,3 +13,11 @@ Get free API key at:
 ### Example Code
 
 [See how to use the client in your project here](https://github.com/femtotrader/barchart-ondemand-client-python/blob/master/samples/main.py)
+
+### Additional remarks
+
+This project is not a [Barchart](http://www.barchartondemand.com/) projet.
+
+Use it at your own risk.
+
+Some Barchart projects are available at https://github.com/barchart/
