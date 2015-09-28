@@ -23,7 +23,6 @@ session = requests_cache.CachedSession(cache_name='cache',
 #session = None # pass a None session to avoid caching queries
 
 
-"""
 # getQuote with ONE symbol
 # ========================
 symbol = "^EURUSD"
@@ -50,10 +49,9 @@ symbol = 'IBM'
 history = getHistory(symbol, typ='daily', startDate='20140928000000')
 print(history)
 print(history.dtypes)
-print(type(history['timestamp'][0])) # should be a pandas.tslib.Timestamp
-print(type(history['tradingDay'][0])) # should be a pandas.tslib.Timestamp
-"""
-
+#print(type(history['timestamp'][0])) # should be a pandas.tslib.Timestamp
+#print(type(history.index[0])) # should be a pandas.tslib.Timestamp
+#print(type(history['tradingDay'][0])) # should be a pandas.tslib.Timestamp
 
 # getHistory with SEVERAL symbols
 # ===============================
@@ -61,4 +59,5 @@ symbols = ["ZC*1", "IBM", "GOOGL" , "^EURUSD"]
 histories = getHistory(symbols, typ='daily', startDate='20140928000000')
 print(histories)
 print(histories.dtypes)
+#print(type(histories.index[0])) # should be a pandas.tslib.Timestamp
 #print(type(histories['timestamp'][0])) # should be a pandas.tslib.Timestamp

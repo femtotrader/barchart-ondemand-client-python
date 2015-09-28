@@ -147,6 +147,7 @@ def _getHistory_one_symbol(symbol, startDate, typ='daily', session=None):
     if _PANDAS_INSTALLED and CONFIG.output_pandas:
         timestamp_cols = ['timestamp', 'tradingDay']
         df = pd.DataFrame(response['results'])
+        print(df)
         for col in timestamp_cols:
             df[col] = pd.to_datetime(df[col])
         #df['tradingDay'] = df['tradingDay'].map(lambda s: datetime.datetime.strptime(s, DATE_FMT).date())
