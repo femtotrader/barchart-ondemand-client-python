@@ -12,7 +12,9 @@ Get free API key at:
 
 ### Example Code
 
-[See how to use the client in your project here](https://github.com/femtotrader/barchart-ondemand-client-python/blob/master/samples/main.py)
+[See how to use the client in your project here](https://github.com/femtotrader/barchart-ondemand-client-python/blob/master/samples/main.py).
+
+You can also watch this [IPython (Jupyter) notebook](https://github.com/femtotrader/barchart-ondemand-client-python/blob/master/notebooks/example.ipynb).
 
 ### Additional remarks
 

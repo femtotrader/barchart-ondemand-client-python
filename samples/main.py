@@ -48,7 +48,7 @@ CONFIG.output_pandas = True
 # ==========================
 symbol = 'IBM'
 startDate = datetime.date(year=2014, month=9, day=28)
-history = getHistory(symbol, typ='daily', startDate=startDate)
+history = getHistory(symbol, typ='daily', startDate=startDate, session=session)
 print(history)
 print(history.dtypes)
 #print(type(history['timestamp'][0])) # should be a pandas.tslib.Timestamp
@@ -59,7 +59,7 @@ print(history.dtypes)
 # getHistory with SEVERAL symbols
 # ===============================
 symbols = ["ZC*1", "IBM", "GOOGL" , "^EURUSD"]
-histories = getHistory(symbols, typ='daily', startDate=startDate)
+histories = getHistory(symbols, typ='daily', startDate=startDate, session=session)
 print(histories)
 print(histories.dtypes)
 #print(type(histories.index[0])) # should be a pandas.tslib.Timestamp
