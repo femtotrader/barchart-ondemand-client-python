@@ -3,7 +3,8 @@
 
 import barchart
 from barchart import getHistory, getQuote, CONFIG
-
+import pandas as pd
+pd.set_option("max_rows", 10)
 
 # API key setup
 # =============
@@ -64,3 +65,4 @@ print(histories)
 print(histories.dtypes)
 #print(type(histories.index[0])) # should be a pandas.tslib.Timestamp
 #print(type(histories['timestamp'][0])) # should be a pandas.tslib.Timestamp
+print(histories.loc[:, :, "IBM"]) #??
