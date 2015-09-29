@@ -172,6 +172,7 @@ def getHistory(symbols, startDate, typ='daily', session=None):
             d[symbol] = _getHistory_one_symbol(symbol, startDate, typ, session)
         if _PANDAS_INSTALLED and CONFIG.output_pandas:
             panel = pd.Panel.from_dict(d)
+            panel = panel.transpose(2, 1, 0)
             return panel # returns a Pandas Panel
         else:
             return d # returns an OrderedDict
